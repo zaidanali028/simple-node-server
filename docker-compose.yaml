@@ -1,0 +1,16 @@
+version: '3.9'  # Specifying the version of Docker Compose being used.
+
+services:  # Defining the services (containers) in this stack.
+  web:  # The main service, representing the Node.js application.
+    build: 
+      context: .  # The build context, pointing to the current directory.
+      dockerfile: Dockerfile  # Specifies the Dockerfile to use for building the image.
+    ports:
+      - "3000:3000"  # Mapping port 3000 on the host to port 3000 in the container.
+    volumes:
+      - .:/app  # Mounting the current directory on the host to /usr/src/app in the container.
+      - node_modules:/app/node_modules  # Ensuring `node_modules` is managed only within the container and does not change.
+    restart: unless-stopped  # Automatically restarts the container unless you manually stop it.
+
+volumes:  # Defines named volumes for the application.
+  node_modules:  # Prevents conflicts by isolating the `node_modules` directory.
