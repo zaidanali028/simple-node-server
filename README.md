@@ -76,7 +76,7 @@ You can modify the application by editing the following files:
 * View logs with `docker-compose logs`
 
 ## 🌐 Docker Hub
-Find the latest image and more information on [Docker Hub](https://hub.docker.com/r/zaidanali028/simple-node-server)
+Find the latest image and more information on [Docker Hub](https://hub.docker.com/r/zaidanali028/new-node-server)
 
 
 
