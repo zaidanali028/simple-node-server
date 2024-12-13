@@ -1,62 +1,83 @@
-# Simple Node.js Docker App
+# 🚢 Simple Node.js Docker App 🐳
 
-A lightweight Node.js application containerized with Docker, demonstrating basic Docker concepts and deployment patterns. The application serves a simple "Hello from, DockerHub!" message using Express.js.
+A lightweight Node.js application containerized with Docker, demonstrating basic Docker concepts and deployment patterns. The application serves a simple "Hello from DockerHub!" message using Express.js.
 
-## Features
-- Express.js web server with minimal configuration
-- Docker containerization for consistent deployment
-- Simple HTTP endpoint demonstration
-- Production-ready Docker configuration
-
-## Prerequisites
-- [Docker](https://www.docker.com/get-started) installed on your system
-- Internet connection for pulling Docker images
-
-## Quick Start
-
-### 1. Pull the Docker Image
-```bash
-docker pull zaidanali028/simple-node-server:latest
+## 📂 Project Structure
+```
+simple-node-docker/
+│
+├── 🐳 Dockerfile        # Docker-container config
+├── 📄 README.md           # Project documentation
+├── 🔧 docker-compose.yaml # Docker-Compose config
+├── 📜 index.js            # Main application 
+├── 📦 node_modules/       # Dependency packages
+│   ├── express/
+│   └── ... (other dependencies)
+│
+├── 📦 package.json        # Project metadata and dependencies
+└── 📦 package-lock.json   # Locked dependency versions
 ```
 
-### 2. Run the Container
-```bash
-docker run -p 3000:3000 zaidanali028/simple-node-server:latest
-```
+## ✨ Features
+* 🌐 Express.js web server with minimal configuration
+* 🐋 Docker containerization for consistent deployment
+* 🔗 Simple HTTP endpoint demonstration
+* 🚀 Production-ready Docker Compose configuration
 
-The application will be available at [http://localhost:3000](http://localhost:3000)
+## 🛠 Prerequisites
+* 🐳 Docker and Docker Compose installed on your system
+* 🌍 Internet connection for pulling Docker images
 
-## Building Locally
-
-If you prefer to build the image yourself:
-
+## 🚀 Quick Start
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/zaidanali028/simple-node-server.git
 cd simple-node-docker
 ```
 
-2. Build the Docker image:
+2. Start the application using Docker Compose:
+
 ```bash
-docker build -t simple-node-server .
+docker-compose up -d
 ```
 
-3. Run the container:
+3. Verify the application is running:
 ```bash
-docker run -p 3000:3000 simple-node-server
+docker-compose ps
 ```
 
-## Customization
+The application will be available at http://localhost:3000 🌐
 
+## 🛑 Stopping the Application
+To stop the application:
+
+```bash
+docker-compose down
+```
+
+## 🏗 Rebuilding the Container
+If you make changes and want to rebuild:
+
+```bash
+docker-compose up -d --build
+```
+
+## 🔧 Customization
 You can modify the application by editing the following files:
-- `index.js` - Main application logic
-- `Dockerfile` - Container configuration
-- `package.json` - Dependencies and scripts
+* 📄 `index.js` - Main application logic
+* 🐳 `Dockerfile` - Container configuration
+* 🔧 `docker-compose.yaml` - Container orchestration
+* 📦 `package.json` - Dependencies and scripts
 
-After making changes, rebuild the Docker image to apply them.
+## 💡 Development Workflow
+* Make changes to your code
+* Rebuild the container with `docker-compose up -d --build`
+* View logs with `docker-compose logs`
 
-## Docker Hub
-
+## 🌐 Docker Hub
 Find the latest image and more information on [Docker Hub](https://hub.docker.com/r/zaidanali028/simple-node-server)
+
+
 
 
